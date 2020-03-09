@@ -1,0 +1,11 @@
+{
+  "name": "track.me",
+  "version": "1.0.0",
+  "description": "Datascience yourself to improve your habits, energy management, diet and life!",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Anthony de Vellis",
+  "license": "ISC"
+}
