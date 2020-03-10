@@ -1,0 +1,15 @@
+.page {
+  display: block;
+  min-height: inherit;
+  background: var(--clr-dark);
+}
+
+.page__header {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  color: var(--clr-accent);
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

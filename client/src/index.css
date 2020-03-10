@@ -1,7 +1,20 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --clr-light: rgb(251, 249, 114);
+  --clr-primary: rgb(216, 213, 22);
+  --clr-dark: rgb(187, 184, 0);
+  --clr-accent: rgb(0, 162, 255);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

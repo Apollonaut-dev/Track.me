@@ -1,0 +1,33 @@
+.App {
+  /* background: var(--clr-primary); */
+  min-height: 100vh;
+}
+
+.btn {
+  background: var(--clr-accent);
+  color: white;
+  border: 1.5px solid var(--clr-dark);
+  border-radius: 8px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 6rem;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:active {
+  background: var(--clr-light);
+  color: var(--clr-accent);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
