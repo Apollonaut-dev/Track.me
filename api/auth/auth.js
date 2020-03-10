@@ -8,14 +8,14 @@ exports.signup = async (req, res, next) => {
   try {
     const validation = validationResult(req);
     if (validation.errors.length) {
-      const error = new Error('Validation failed.');
+      const error = new Error('validation failed');
       error.statusCode = 422;
       error.data = [...validation.errors];
       throw error;
     }
 
     const email = req.body.email;
-    const name = req.body.name;
+    const first_name = req.body.first_name;
     const password = req.body.password;
 
     const hashedPw = await bcrypt.hash(password, 12);
@@ -23,7 +23,7 @@ exports.signup = async (req, res, next) => {
     const user = new User({
       email: email,
       password: hashedPw,
-      first_name: name
+      first_name: first_name
     });
     const result = await user.save();
     res.status(201).json({ message: 'User created!', userId: result._id });
