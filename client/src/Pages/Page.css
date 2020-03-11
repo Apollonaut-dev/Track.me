@@ -13,3 +13,13 @@
   font-weight: 800;
   text-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+#tos-checkbox-label a {
+  font-family: inherit;
+  color: var(--clr-accent);
+}
+
+#tos-checkbox-label a:hover,
+#tos-checkbox-label a:visited {
+  opacity: 0.8;
+}
