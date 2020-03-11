@@ -3,6 +3,18 @@ const User = require('../models/User');
 
 module.exports.signup =
   [
+    body('name')
+      .trim()
+      .not()
+      .isEmpty()
+      .withMessage('no name'),
+    body('sex')
+      .isIn(['M', 'F'])
+      .withMessage('no sex'),
+    body('birthdate')
+      .exists()
+      .customSanitizer(value => Date.parse(value))
+      .withMessage('no birthdate'),
     body('email')
       .isEmail()
       .withMessage('invalid email')
@@ -19,9 +31,7 @@ module.exports.signup =
       .trim()
       .isLength({ min: 5 })
       .withMessage('short password'),
-    body('first_name')
-      .trim()
-      .not()
-      .isEmpty()
-      .withMessage('no name')
+    body('password_confirmation')
+      .custom((value, { req }) => value === req.body.password)
+      .withMessage('nonmatching passwords')
   ];
