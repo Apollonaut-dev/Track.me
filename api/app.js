@@ -31,6 +31,10 @@ App.use((error, req, res, next) => {
   const status = error.statusCode || 500;
   const message = error.message;
   const data = error.data;
+  if (status === 500) {
+    data = {};
+    message = "server error";
+  }
   res.status(status).json({ message: message, data: data });
 });
 
