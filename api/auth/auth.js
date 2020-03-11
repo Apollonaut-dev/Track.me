@@ -14,16 +14,20 @@ exports.signup = async (req, res, next) => {
       throw error;
     }
 
+    const name = req.body.name;
+    const sex = req.body.sex;
+    const birthdate = req.body.birthdate;
     const email = req.body.email;
-    const first_name = req.body.first_name;
     const password = req.body.password;
 
     const hashedPw = await bcrypt.hash(password, 12);
 
     const user = new User({
-      email: email,
+      name,
+      sex,
+      birthdate,
+      email,
       password: hashedPw,
-      first_name: first_name
     });
     const result = await user.save();
     res.status(201).json({ message: 'User created!', userId: result._id });
