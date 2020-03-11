@@ -9,7 +9,7 @@ function TextInput(props) {
   return (
     <div className={`form-group ${classNames ? classNames : ''}`}> 
       <label htmlFor={`id-${name}`}>{label}</label>
-      <input name={name} id={`id-${name}`} type={type} required={required ? true : false}/>
+      <input name={name} id={`id-${name}`} type={type} required={required ? true : false} />
     </div>
   );
 }
